@@ -22,7 +22,6 @@ const OgScraper: React.FC = () => {
     };
 
     const onPress = () => {
-        setValue('');
         setErr('');
         ogs({ url: value }, function(err: any, results: any) {
             if (err) {

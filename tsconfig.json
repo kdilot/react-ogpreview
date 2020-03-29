@@ -1,31 +1,37 @@
 {
-    "compilerOptions": {
-        "target": "es6",
-        "lib": ["dom", "dom.iterable", "esnext"],
-        "allowJs": true,
-        "skipLibCheck": true,
-        "esModuleInterop": true,
-        "allowSyntheticDefaultImports": true,
-        "forceConsistentCasingInFileNames": true,
-        "module": "esnext",
-        "moduleResolution": "node",
-        "resolveJsonModule": true,
-        "isolatedModules": true,
-        "noImplicitAny": false,
-        "noEmit": true,
-        "jsx": "react",
-        "baseUrl": "./src"
-    },
-    "files.exclude": {
-        "**/.git": true,
-        "**/yarn.lock": true,
-        "**/node_modules": true
-    },
-    "search.exclude": {
-        "**/.git": true,
-        "**/yarn.lock": true,
-        "**/node_modules": true
-    },
-
-    "include": ["src"]
+  "compilerOptions": {
+    "target": "es6",
+    "lib": [
+      "dom",
+      "dom.iterable",
+      "esnext"
+    ],
+    "allowJs": true,
+    "skipLibCheck": true,
+    "esModuleInterop": true,
+    "allowSyntheticDefaultImports": true,
+    "forceConsistentCasingInFileNames": true,
+    "module": "esnext",
+    "moduleResolution": "node",
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "noImplicitAny": false,
+    "noEmit": true,
+    "jsx": "react",
+    "baseUrl": "./src",
+    "strict": true
+  },
+  "files.exclude": {
+    "**/.git": true,
+    "**/yarn.lock": true,
+    "**/node_modules": true
+  },
+  "search.exclude": {
+    "**/.git": true,
+    "**/yarn.lock": true,
+    "**/node_modules": true
+  },
+  "include": [
+    "src"
+  ]
 }
