@@ -1,12 +1,12 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import ogs from 'open-graph-scraper';
 import Truncate from 'react-truncate';
 import styled from 'styled-components';
 
 const OgScraper: React.FC = () => {
     const [rs, setRs] = useState<any>('');
-    const [error, setErr] = useState('');
-    const [value, setValue] = useState('');
+    const [error, setErr] = useState<string>('');
+    const [value, setValue] = useState<string>('');
     const staticObject = {
         ogTitle: 'Open Graph protocol',
         ogType: 'website',
@@ -37,6 +37,11 @@ const OgScraper: React.FC = () => {
             }
         });
     };
+
+    useEffect(() => {
+        setErr('');
+        setRs('');
+    }, [value]);
 
     return (
         <>
@@ -79,15 +84,17 @@ const OgScraper: React.FC = () => {
                             </DesText>
                         )}
                         <UrlText
-                            href={rs.ogUrl}
+                            href={rs.ogUrl ? rs.ogUrl : value}
                             target="_blank"
                             rel="noopener noreferrer">
-                            <Truncate lines={1}>{rs.ogUrl}</Truncate>
+                            <Truncate lines={1}>
+                                {rs.ogUrl ? rs.ogUrl : value}
+                            </Truncate>
                         </UrlText>
                     </ContentsLayout>
                 </Container>
             )}
-            {error && <div>preview...</div>}
+            {error && <div>sample</div>}
         </>
     );
 };
@@ -116,7 +123,7 @@ const Container = styled.div`
     align-items: center;
     flex-direction: row;
     border: 1px solid black;
-    width: 500px;
+    width: 350px;
 `;
 
 const TitleInput = styled.input`
@@ -150,6 +157,7 @@ const ContentsLayout = styled.div`
     flex-direction: column;
     align-items: flex-start;
     padding: 10px;
+    overflow: hidden;
 `;
 
 const TitleText = styled.div`
